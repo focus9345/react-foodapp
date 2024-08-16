@@ -26,9 +26,60 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
 */
+
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-primary;
+  }
+
+  * {
+    @apply transition-colors duration-100;
+  }
+
+  h1 {
+    @apply text-3xl;
+    @apply font-bold;
+    @apply mb-4;
+  }
+
+  h2 {
+    @apply text-2xl;
+    @apply font-semibold;
+    @apply mb-4;
+  }
+
+  h3 {
+    @apply text-xl;
+    @apply font-semibold;
+    @apply mb-4;
+  }
+
+  h4 {
+    @apply text-lg;
+    @apply font-medium;
+  }
+
+  h5 {
+    @apply text-base;
+    @apply font-medium;
+  }
+
+  button {
+    @apply bg-primary;
+  }
+
+
+}
+
+  @layer utilities {
+    .text-balance {
+      text-wrap: balance;
+    }
+  }

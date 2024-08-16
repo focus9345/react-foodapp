@@ -2,10 +2,10 @@ import { ReactNode } from 'react';
 
 export default function PageWrapper( { children }: { children: ReactNode }) {
     return (
-     
-            <main className="content-start gap-4 px-6 py-10 w-full h-screen items-center justify-center">
-            { children }
+            <main className="flex flex-col content-start gap-4 px-10 py-12 w-screen h-screen items-center justify-between">
+                <div className="w-full md:w-5/6 lg:w-3/4 justify-start">
+                    { children }
+                </div>
             </main>
-
     );
 }
