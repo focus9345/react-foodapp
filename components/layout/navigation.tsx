@@ -1,10 +1,9 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem} from "@nextui-org/navbar";
-import {Link} from "@nextui-org/link";
-import {Button} from "@nextui-org/button";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
 import {CompanyLogo} from "./companylogo";
 
 export default function Navigation() {
+  
   return (
     <Navbar>
       <NavbarBrand>

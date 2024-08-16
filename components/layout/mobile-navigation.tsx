@@ -1,10 +1,10 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/navbar";
 import {Link} from "@nextui-org/link";
 import {Button} from "@nextui-org/button";
 import {CompanyLogo} from "./companylogo";
 
-export default function App() {
+export default function MobileNavigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
