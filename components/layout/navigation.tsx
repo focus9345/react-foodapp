@@ -1,9 +1,10 @@
 import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import { NAV_ITEMS } from "@/library/nav";
+import MenuItem from "./menu-item";
 import {CompanyLogo} from "./companylogo";
 
 export default function Navigation() {
-  
   return (
     <Navbar>
       <NavbarBrand>
@@ -11,31 +12,14 @@ export default function Navigation() {
         <p className="font-bold text-inherit">ACME</p>
       </NavbarBrand>
       <NavbarContent className="sm:hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="/about">
-            About
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="/" aria-current="page">
-            Menu
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Contact
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
+
+        {NAV_ITEMS.map((item, index) => {
+          const isLastItem = index === NAV_ITEMS.length - 1;
+          return (
+            <MenuItem key={index} item={item} />
+          );
+        })}
+
       </NavbarContent>
     </Navbar>
   );
