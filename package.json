@@ -16,6 +16,8 @@
     "@nextui-org/spinner": "^2.0.33",
     "@nextui-org/system": "^2.2.5",
     "@nextui-org/theme": "^2.2.9",
+    "@types/better-sqlite3": "^7.6.11",
+    "better-sqlite3": "^11.1.2",
     "framer-motion": "^11.3.21",
     "next": "14.2.5",
     "react": "^18",

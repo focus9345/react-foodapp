@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
       <Providers>
         
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between bg-gradient-to-t from-slate-900 to-zinc-600 w-screen h-screen">
           <Header />
           <Divider orientation="horizontal" />
           <PageWrapper >

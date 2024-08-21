@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 export type NavItem = {
     title: string;
     path: string;
@@ -5,4 +7,18 @@ export type NavItem = {
     icon?: JSX.Element;
     submenu?: boolean;
     subMenuItems?: NavItem[];
+}
+
+export type MenuItemType = {
+    id: string;
+    title: string;
+    slug: string;
+    image: StaticImageData;
+    summary: string;
+    instructions: string;
+    creator: string;
+    creator_email: string;
+    calories: number;
+    servings: number;
+    date: Date;
 }
