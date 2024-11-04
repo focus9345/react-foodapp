@@ -1,6 +1,6 @@
 const sql = require('better-sqlite3');
 const db = sql('menu.db');
-const dateNow = Date.now();
+const dateNow = new Date().toDateString();
 
 const dummyMeals = [
   {
@@ -213,20 +213,21 @@ const dummyMeals = [
     creator_email: 'johnsnow@example.com',
     date: dateNow,
     calories: 280,
-    servings: 4
+    servings: 4,
   },
 ];
 
 db.prepare(`
    CREATE TABLE IF NOT EXISTS meals (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
-       slug TEXT NOT NULL UNIQUE,
        title TEXT NOT NULL,
+       slug TEXT NOT NULL UNIQUE,
        image TEXT NOT NULL,
        summary TEXT NOT NULL,
        instructions TEXT NOT NULL,
        creator TEXT NOT NULL,
-       date DATE NOT NULL,
+       creator_email TEXT NOT NULL,
+       date TEXT NOT NULL,
        calories INT NOT NULL,
        servings INT NOT NULL
     )
@@ -236,8 +237,8 @@ async function initData() {
   const stmt = db.prepare(`
       INSERT INTO meals VALUES (
          null,
-         @slug,
          @title,
+         @slug,
          @image,
          @summary,
          @instructions,

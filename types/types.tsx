@@ -18,7 +18,7 @@ export type MenuItemType = {
     instructions: string;
     creator: string;
     creator_email: string;
+    date: string;
     calories: number;
     servings: number;
-    date: Date;
 }

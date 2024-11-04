@@ -1,9 +1,13 @@
 import { Link } from "@nextui-org/link";
 import { Divider, Image } from "@nextui-org/react";
 import MenuGrid from "@/components/menu/menu-grid";
-// import menuImage from "@/assets/menu/pexels-bananamade-2762942.jpg";
-export default function MenuPage() {
+import { getAllMeals } from '@/library/menudata';
+import { MenuItemType } from "@/types/types";
 
+// import menuImage from "@/assets/menu/pexels-bananamade-2762942.jpg";
+const MenuPage: React.FC = async () => {
+  const meals: MenuItemType[] = await getAllMeals();
+  
     return (
       <>
       <header>
@@ -18,8 +22,13 @@ export default function MenuPage() {
       <Divider />
       <main>
             <h1>Menu</h1>
-            <MenuGrid />
+            {meals.length === 0 && <p>Curently there are no meals to show.</p>}
+            {meals.length > 0 &&
+            <MenuGrid {...meals} />
+            }
       </main>
       </>
     );
   }
+
+  export default MenuPage;
