@@ -1,12 +1,23 @@
+import { Suspense } from 'react';
 import { Link } from "@nextui-org/link";
-import { Divider, Image } from "@nextui-org/react";
+import { Divider } from "@nextui-org/react";
 import MenuGrid from "@/components/menu/menu-grid";
 import { getAllMeals } from '@/library/menudata';
 import { MenuItemType } from "@/types/types";
+import LoadingSkeleton from '@/components/layout/loadskeleton';
 
-// import menuImage from "@/assets/menu/pexels-bananamade-2762942.jpg";
-const MenuPage: React.FC = async () => {
-  const meals: MenuItemType[] = await getAllMeals();
+async function Meals() {
+  const meals: MenuItemType[] = await getAllMeals(); 
+  if (meals.length === 0) {
+    return <p>Curently there are no meals to show.</p>
+  } else if (meals.length > 0) {
+    return <MenuGrid {...meals} />
+  } else {
+    return <p>Meals are unable to show at this time.</p>
+  }
+}
+
+const MenuPage: React.FC = () => {
   
     return (
       <>
@@ -22,10 +33,9 @@ const MenuPage: React.FC = async () => {
       <Divider />
       <main>
             <h1>Menu</h1>
-            {meals.length === 0 && <p>Curently there are no meals to show.</p>}
-            {meals.length > 0 &&
-            <MenuGrid {...meals} />
-            }
+            <Suspense fallback={<LoadingSkeleton label="Loading Meals..." />} >
+              <Meals />
+            </Suspense>
       </main>
       </>
     );

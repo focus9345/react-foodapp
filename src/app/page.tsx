@@ -6,7 +6,7 @@ export default function Home() {
     <section>
       <h1>Home Page</h1>
       <div>
-        <Button>Click Me</Button>
+        <Button color="primary">Click Me</Button>
       </div>
     </section>
   );

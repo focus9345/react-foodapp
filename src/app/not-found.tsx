@@ -1,11 +1,21 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import { Button } from "@nextui-org/react";
  
-export default function NotFound() {
+  const NotFound: React.FC = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center w-full h-screen">
       <h2>Not Found</h2>
       <p>Could not find requested resource</p>
-      <Link href="/">Return Home</Link>
+      <p><br /><Link href="/">
+      <Button
+        color="warning" 
+      >
+        Return Home
+      </Button>
+      </Link>
+      </p>
     </div>
   )
 }
+
+export default NotFound;

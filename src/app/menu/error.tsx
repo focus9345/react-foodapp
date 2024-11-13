@@ -1,4 +1,4 @@
-'use client' // Error components must be Client Components
+'use client' 
 import { useEffect } from 'react';
 import { Button } from "@nextui-org/react";
 
@@ -25,13 +25,12 @@ interface ErrorProps {
  
   return (
     <div className="error flex flex-col items-center justify-center w-full h-screen">
-      <div>
-      <h1>Something went wrong!</h1>
-      <p>An unexpected error has occurred.</p>
+      <h1>Something went wrong with the Meals!</h1>
+      <p>An unexpected error with our meals at this time.</p>
       <p>{error.message}</p>
       <p><br />
       <Button
-        color="danger"
+        color="danger" 
         onClick={
           // Attempt to recover by trying to re-render the segment
           () => reset()
@@ -40,7 +39,6 @@ interface ErrorProps {
         Try again
       </Button>
       </p>
-      </div>
     </div>
   )
 }

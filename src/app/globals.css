@@ -45,25 +45,29 @@ body {
 
   h1 {
     @apply text-3xl;
-    @apply font-bold;
+    @apply font-semibold;
     @apply mb-4;
+    @apply text-yellow-500;
   }
 
   h2 {
     @apply text-2xl;
     @apply font-semibold;
     @apply mb-4;
+    @apply text-yellow-600;
   }
 
   h3 {
     @apply text-xl;
     @apply font-semibold;
     @apply mb-4;
+    @apply text-yellow-600;
   }
 
   h4 {
     @apply text-lg;
     @apply font-medium;
+    @apply text-amber-500;
   }
 
   h5 {
@@ -71,8 +75,9 @@ body {
     @apply font-medium;
   }
 
-  button {
-    @apply bg-primary;
+  a {
+    @apply text-yellow-400;
+    @apply hover:text-amber-600;
   }
 
 

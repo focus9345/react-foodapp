@@ -1,6 +1,7 @@
 import LoadingSkeleton from '@/components/layout/loadskeleton';
 
-export default function Loading() {
-    // You can add any UI inside Loading, including a Skeleton.
-    return <LoadingSkeleton />
+const Loading: React.FC = () => {
+    return <LoadingSkeleton label="Loading..." />
   }
+
+export default Loading;

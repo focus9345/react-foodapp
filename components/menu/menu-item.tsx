@@ -1,37 +1,45 @@
 import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button } from "@nextui-org/react";
 import { MenuItemType } from "@/types/types";
 import React from 'react';
-import menuImage from "@/assets/menu/pexels-bananamade-2762942.jpg";
 
-const MenuItem: React.FC<MenuItemType> = (props) => {
+interface MenuItem {
+    title: string;
+    slug: string;
+    image: any;
+    summary: string;
+    creator: string;
+}
+
+const MenuItem: React.FC<MenuItem> = ({title, slug, image, summary, creator}) => {
+
     return (
 
-            <Card className="max-w-[400px] p-5 dark:bg-slate-800 border-1 border-zinc-500">
-                <CardHeader className="flex gap-3">
+            <Card className="max-w-[400px] p-4 dark:bg-coolGrey-800 border-1 border-zinc-500">
+                <CardHeader className="flex flex-col">
                     <Image
-                        alt={"Recipe Name"}
-                        height={80}
+                        alt={title}
+                        height={310}
                         radius="sm"
-                        src={menuImage.src}
-                        width={80}
+                        src={image}
+                        width={310}
                         isZoomed
                     />
-                    <div className="flex flex-col">
-                        <p className="text-md">Recipe Name</p>
-                        <p className="text-small text-default-500">Author Name</p>
+                    <div className="w-full">
+                        <p className="text-md text-yellow-600 font-semibold pt-1">{title}</p>
+                        <p className="text-xs text-cyan-600 font-light italic">by {creator}</p>
                     </div>
                 </CardHeader>
                 <Divider />
-                <CardBody>
-                    <p>Description Here</p>
+                <CardBody className="text-zinc-300 text-sm font-light min-h-24">
+                    <p>{summary}</p>
                 </CardBody>
                 <Divider />
                 <CardFooter>
-                    <Button>
-                    <Link
+                    <Button className="bg-yellow-700 hover:bg-amber-800 transition ease-in-out duration-700">
+                    <Link className="text-zinc-100 font-semibold"
                         isExternal
                         showAnchorIcon
-                        href="/slug"
+                        href={slug}
                     >
                         Full Recipe
                     </Link>
