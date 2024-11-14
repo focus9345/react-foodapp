@@ -1,4 +1,4 @@
-import { StaticImageData } from 'next/image';
+
 
 export type NavItem = {
     title: string;
@@ -12,8 +12,8 @@ export type NavItem = {
 export type MenuItemType = {
     id: string;
     title: string;
-    slug: string;
-    image: StaticImageData;
+    slug?: string;
+    image: string;
     summary: string;
     instructions: string;
     creator: string;

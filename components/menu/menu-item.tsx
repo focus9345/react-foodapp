@@ -2,10 +2,11 @@ import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button } 
 import { MenuItemType } from "@/types/types";
 import React from 'react';
 
+
 interface MenuItem {
     title: string;
     slug: string;
-    image: any;
+    image: string;
     summary: string;
     creator: string;
 }
@@ -37,9 +38,8 @@ const MenuItem: React.FC<MenuItem> = ({title, slug, image, summary, creator}) =>
                 <CardFooter>
                     <Button className="bg-yellow-700 hover:bg-amber-800 transition ease-in-out duration-700">
                     <Link className="text-zinc-100 font-semibold"
-                        isExternal
                         showAnchorIcon
-                        href={slug}
+                        href={`/menu/${slug}`}
                     >
                         Full Recipe
                     </Link>
