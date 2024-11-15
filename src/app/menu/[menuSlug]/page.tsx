@@ -4,6 +4,7 @@ import { Link, Image, Button } from "@nextui-org/react";
 import { notFound } from "next/navigation";
 import { MenuItemType } from "@/types/types";
 import { RiArrowGoBackFill } from "react-icons/ri";
+import {ScrollShadow} from "@nextui-org/react";
 
 
 /*
@@ -44,15 +45,18 @@ const MenuItemPage: React.FC = async ({ params }) => {
 
           />
         </div>
+        <ScrollShadow className="w-[300px] h-[400px]">
         <div>
           <p>{meal.summary}</p>
           <p dangerouslySetInnerHTML={ markup }></p>
-          <p>Calories: {meal.calories}<br />
-            Servings: {meal.servings} <br />
-            Author: {meal.creator} <br />
-            Posted: {meal.date}
+          <div className="border-t-4 border-cyan-800 my-6 min-h-1"></div>
+          <p><strong>Calories:</strong> {meal.calories}<br />
+          <strong>Servings:</strong> {meal.servings} <br />
+          <strong>Author:</strong> {meal.creator} <br />
+          <strong>Posted:</strong> {meal.date}
           </p>
         </div>
+        </ScrollShadow>
       </main>
       <footer className="mt-6 grid place-items-end">
         <Link href="../">
