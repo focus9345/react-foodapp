@@ -1,6 +1,8 @@
 import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button } from "@nextui-org/react";
 import { MenuItemType } from "@/types/types";
 import React from 'react';
+import Scroll from "@/components/layout/scrolltrigger";
+import defaultImage from "@/public/menu/default.jpg"
 
 
 interface MenuItem {
@@ -14,7 +16,7 @@ interface MenuItem {
 const MenuItem: React.FC<MenuItem> = ({title, slug, image, summary, creator}) => {
 
     return (
-
+            <Scroll>
             <Card className="max-w-[400px] p-4 dark:bg-coolGrey-800 border-1 border-zinc-500">
                 <CardHeader className="flex flex-col">
                     <Image
@@ -22,6 +24,7 @@ const MenuItem: React.FC<MenuItem> = ({title, slug, image, summary, creator}) =>
                         height={310}
                         radius="sm"
                         src={image}
+                        fallbackSrc={defaultImage.src}
                         width={310}
                         isZoomed
                     />
@@ -46,6 +49,7 @@ const MenuItem: React.FC<MenuItem> = ({title, slug, image, summary, creator}) =>
                     </Button>
                 </CardFooter>
             </Card>
+            </Scroll>
     );
 }
 export default MenuItem;

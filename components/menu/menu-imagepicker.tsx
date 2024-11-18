@@ -34,8 +34,8 @@ const MenuImagePicker: React.FC<MenuImageInput> = ({ name }) => {
 
     return (
         <>
-        <div className="grid md:grid-cols-2 md:gap-6 mb-2 place-content-center">
-            <div className="border border-zinc-600 min-h-5 rounded-sm">
+        <div className="grid md:grid-cols-2 md:gap-6 mb-2 place-content-evenly">
+            <div className="border border-zinc-600 md:min-h-10 rounded-sm">
                 {!pickedImage && <p className="text-zinc-400 text-sm">No image picked.</p>}
                 {pickedImage && <Image src={pickedImage} alt="Image picked by user" width="150" />}
             </div>
