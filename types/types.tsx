@@ -12,8 +12,8 @@ export type NavItem = {
 export type MenuItemType = {
     id: string;
     title: string;
-    slug?: string;
-    menuSlug?: string;
+    slug?: string | undefined;
+    menuSlug?: string | undefined;
     image: string;
     summary: string;
     instructions: string;
