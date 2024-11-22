@@ -11,7 +11,7 @@ async function Meals() {
   if (meals.length === 0) {
     return <p>Curently there are no meals to show.</p>
   } else if (meals.length > 0) {
-    return <MenuGrid {...meals} />
+    return <MenuGrid menus={meals} />
   } else {
     return <p>Meals are unable to show at this time.</p>
   }

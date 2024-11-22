@@ -16,15 +16,15 @@ function isInvalidText(text: any) {
 
 export async function shareMeal(prevState: any, formData: FormData) {
     const meal = {
-        title: formData.get('title'),
-        image: formData.get('image'),
-        summary: formData.get('summary'),
-        instructions: formData.get('instructions'),
-        creator: formData.get('fullname'),
-        creator_email: formData.get('email'),
+        title: formData.get('title') as string,
+        image: formData.get('image') as string,
+        summary: formData.get('summary') as string,
+        instructions: formData.get('instructions') as string,
+        creator: formData.get('fullname') as string,
+        creator_email: formData.get('email') as string,
         date: dateNow,
-        calories: formData.get('calories'),
-        servings: formData.get('servings')
+        calories: parseInt(formData.get('calories') as string) as number,
+        servings: parseInt(formData.get('servings') as string) as number
     }
 
     if (
@@ -43,7 +43,7 @@ export async function shareMeal(prevState: any, formData: FormData) {
             return { message: 'Invalid input!' };     
         }
 
-    //console.log(meal);
+    //validatain passes now save the meal
     await saveMeal(meal);
     revalidatePath('/menu', 'layout');
     redirect('/menu');
